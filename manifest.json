@@ -16,5 +16,7 @@
     },
     "defalt_title" : "Twitter Image DL",
     "default_popup" : "popup.html"
-  }
+  },
+  "permissions" : [
+  ]
 }
