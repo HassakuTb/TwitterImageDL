@@ -1,0 +1,20 @@
+{
+  "manifest_version" : 2,
+  "name" : "Twitter Image DL",
+  "short_name" : "Twi Img DL",
+  "version" : "0.0.0",
+  "default_locale" : "ja_JP",
+  "description" : "This extension downloads original image from focused tweet.",
+  "icons" : {
+    "16" : "icon/16.png",
+    "48" : "icon/48.png",
+    "128" : "icon/128.png",
+  },
+  "page_action" : {
+    "default_icon" : {
+      "19" : "icon/19.png",
+    },
+    "defalt_title" : "Twitter Image DL",
+    "default_popup" : "popup.html"
+  }
+}
