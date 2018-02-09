@@ -36,6 +36,6 @@ chrome.runtime.onInstalled.addListener(function(){
             '*://pbs.twimg.com/media/*.png'
         ]
     });
-
-    chrome.contextMenus.onClicked.addListener(messageToGetTweetInfo);
 });
+
+chrome.contextMenus.onClicked.addListener(messageToGetTweetInfo);
