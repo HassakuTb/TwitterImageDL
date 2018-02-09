@@ -1,12 +1,18 @@
-function downloadOriginalImage(info, tab){
-    console.log(info);
-    //  do something
-
+function downloadImage(srcUrl, response){
+    console.log(response);
     chrome.downloads.download({
-        url: (info.srcUrl + ':orig'),
+        url: (srcUrl + ':orig'),
         saveAs: false
     });
+}
 
+function messageToGetTweetInfo(info, tab){
+    console.log(info);
+    chrome.tabs.sendMessage(
+        tab.id,
+        {name: 'twitterImageDL', srcUrl: info.srcUrl},
+        function(response) {downloadImage(info.srcUrl, response);}
+    );
 }
 
 chrome.runtime.onInstalled.addListener(function(){
@@ -25,25 +31,5 @@ chrome.runtime.onInstalled.addListener(function(){
         ]
     });
 
-    chrome.contextMenus.onClicked.addListener(downloadOriginalImage);
+    chrome.contextMenus.onClicked.addListener(messageToGetTweetInfo);
 });
-
-
-// //  show icon only in http://twitter,com/*/status/*
-// chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) =>{
-//     console.log(changeInfo);
-//     if(changeInfo.status === 'loading'){
-//         if(createTwitterUrlRegexPattern().test(tab.url)){
-//             chrome.pageAction.show(tabId);
-//         }
-//         else{
-//             chrome.pageAction.hide(tabId);
-//         }
-//     }
-// });
-//
-//
-// //  create tweet detail url pattern
-// function createTwitterUrlRegexPattern(){
-//     return /https:\/\/twitter.com\/\w*\/status\/\d*/;
-// }

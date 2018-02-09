@@ -13,16 +13,20 @@
     "scripts" : ["scripts/background.js"],
     "persistent" : false
   },
-  "page_action" : {
-    "default_icon" : {
-      "19" : "icon/icon19.png"
-    },
-    "defalt_title" : "Twitter Image DL",
-    "default_popup" : "popup.html"
-  },
+  "content_scripts":[
+     {
+          "matches" : [
+              "*://twitter.com/*"
+          ],
+          "js":[
+              "scripts/getImageInfo.js"
+          ]
+      }
+  ],
   "permissions" : [
     "tabs",
     "contextMenus",
-    "downloads"
+    "downloads",
+    "*://twitter.com/*"
   ]
 }
