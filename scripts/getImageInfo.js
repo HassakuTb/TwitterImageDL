@@ -1,8 +1,9 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+    console.log(request);
     if(request.name === 'twitterImageDL'){
-        getImageInfo(request.srcUrl, sendResponse);
-        return true;
+        return getImageInfo(request.srcUrl, sendResponse);
     }
+    return true;
 });
 
 function getImageInfo(srcUrl, sendResponse){
@@ -23,8 +24,9 @@ function getImageInfo(srcUrl, sendResponse){
     var tweetId = tweet.attr('data-tweet-id');
 
     sendResponse({
-        username: username,
-        tweetId: tweetId,
-        imageIndex: imageIndex
+        "username": username,
+        "tweetId": tweetId,
+        "imageIndex": imageIndex
     });
+    return true;
 }

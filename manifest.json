@@ -2,7 +2,7 @@
   "manifest_version" : 2,
   "name" : "Twitter Image DL",
   "short_name" : "Twitter Image DL",
-  "version" : "0.1.1",
+  "version" : "0.1.2",
   "description" : "Download and rename original image in twitter.com.",
   "icons" : {
     "16" : "icon/icon16.png",
