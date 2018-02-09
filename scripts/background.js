@@ -1,7 +1,9 @@
 function downloadImage(srcUrl, response){
     console.log(response);
-    directory = 'TwitterImageDL'
-    filename = `${response.username}-${response.tweetId}-${response.imageIndex}.jpg`;
+    var directory = 'TwitterImageDL'
+    var split = srcUrl.split('.');
+    var extension = split[split.length - 1].toLowerCase();
+    var filename = `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`;
     chrome.downloads.download({
         url: (srcUrl + ':orig'),
         filename: directory + '/' + filename,
@@ -30,7 +32,8 @@ chrome.runtime.onInstalled.addListener(function(){
             '*://twitter.com/*'
         ],
         targetUrlPatterns: [
-            '*://pbs.twimg.com/media/*.jpg'
+            '*://pbs.twimg.com/media/*.jpg',
+            '*://pbs.twimg.com/media/*.png'
         ]
     });
 
