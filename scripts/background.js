@@ -1,6 +1,12 @@
 function downloadOriginalImage(info, tab){
     console.log(info);
     //  do something
+
+    chrome.downloads.download({
+        url: (info.srcUrl + ':orig'),
+        saveAs: false
+    });
+
 }
 
 chrome.runtime.onInstalled.addListener(function(){
@@ -13,6 +19,9 @@ chrome.runtime.onInstalled.addListener(function(){
         ],
         documentUrlPatterns: [
             '*://twitter.com/*'
+        ],
+        targetUrlPatterns: [
+            '*://pbs.twimg.com/media/*.jpg'
         ]
     });
 
