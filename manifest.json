@@ -1,9 +1,9 @@
 {
   "manifest_version" : 2,
   "name" : "Twitter Image DL",
-  "short_name" : "Twi Img DL",
-  "version" : "0.0.0",
-  "description" : "Download original image in twitter.com. Downloaded image renames {userId}-{tweetId}-{0~3}",
+  "short_name" : "Twitter Image DL",
+  "version" : "0.1.0",
+  "description" : "Download and rename original image in twitter.com.",
   "icons" : {
     "16" : "icon/icon16.png",
     "48" : "icon/icon48.png",
