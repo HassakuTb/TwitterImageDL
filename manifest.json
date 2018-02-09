@@ -19,7 +19,8 @@
               "*://twitter.com/*"
           ],
           "js":[
-              "scripts/getImageInfo.js"
+              "scripts/getImageInfo.js",
+              "scripts/jquery-3.3.1.min.js"
           ]
       }
   ],

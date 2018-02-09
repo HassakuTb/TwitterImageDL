@@ -1,7 +1,10 @@
 function downloadImage(srcUrl, response){
     console.log(response);
+    directory = 'TwitterImageDL'
+    filename = `${response.username}-${response.tweetId}-${response.imageIndex}.jpg`;
     chrome.downloads.download({
         url: (srcUrl + ':orig'),
+        filename: directory + '/' + filename,
         saveAs: false
     });
 }
