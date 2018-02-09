@@ -3,7 +3,7 @@
   "name" : "Twitter Image DL",
   "short_name" : "Twi Img DL",
   "version" : "0.0.0",
-  "description" : "This extension downloads original image from focused tweet.",
+  "description" : "Download original image in twitter.com. Downloaded image renames {userId}-{tweetId}-{0~3}",
   "icons" : {
     "16" : "icon/icon16.png",
     "48" : "icon/icon48.png",
