@@ -16,7 +16,6 @@ function getImageInfo(srcUrl, sendResponse){
     mediaContainer.find('[data-image-url]').each(function(index, element){
         if($(element).attr('data-image-url') === srcUrl){
             imageIndex = index;
-            break;
         }
     });
 
