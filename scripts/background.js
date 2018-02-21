@@ -3,7 +3,9 @@ function downloadImage(srcUrl, response){
     var directory = 'TwitterImageDL'
     var split = srcUrl.split('.');
     var extension = split[split.length - 1].toLowerCase();
-    var filename = `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`;
+    var filename = response.result
+            ? `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`
+            : `cannot-resolve.${extension}`
     chrome.downloads.download({
         url: (srcUrl + ':orig'),
         filename: directory + '/' + filename,
