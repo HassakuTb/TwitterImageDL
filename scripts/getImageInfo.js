@@ -12,16 +12,16 @@ function getImageInfo(srcUrl, sendResponse){
     var imageContainer = $(`[data-image-url*="${srcUrl}"]:first`);
     var mediaContainer = imageContainer.closest('.AdaptiveMedia-container');
 
-    var imageIndex;
+    var imageIndex = 0;
     mediaContainer.find('[data-image-url]').each(function(index, element){
         if($(element).attr('data-image-url') === srcUrl){
             imageIndex = index;
+            break;
         }
     });
 
-    var tweet = imageContainer.closest(`[data-screen-name][data-tweet-id]`);
-    var username = tweet.attr('data-screen-name');
-    var tweetId = tweet.attr('data-tweet-id');
+    var username = imageContainer.closest(`[data-screen-name]`).attr('data-screen-name');
+    var tweetId = imageContainer.closest(`[data-item-id]`).attr('data-item-id');
 
     sendResponse({
         "username": username,
