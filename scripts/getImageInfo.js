@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
     console.log(request);
     if(request.name === 'twitterImageDL'){
-        return getImageInfo(request.srcUrl, sendResponse);
+        getImageInfo(request.srcUrl, sendResponse);
     }
     return true;    //  sync
 });
