@@ -40,8 +40,7 @@ chrome.runtime.onInstalled.addListener(function(){
             '*://twitter.com/*'
         ],
         targetUrlPatterns: [
-            '*://pbs.twimg.com/media/*.jpg',
-            '*://pbs.twimg.com/media/*.png'
+            '*://pbs.twimg.com/media/*'
         ]
     });
 });
