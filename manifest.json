@@ -1,7 +1,7 @@
 {
   "manifest_version" : 2,
-  "name" : "Twitter Image DL",
-  "short_name" : "Twitter Image DL",
+  "name" : "Twitter Image Downloader",
+  "short_name" : "Twitter Image DLer",
   "version" : "0.1.5",
   "description" : "Download and rename original image in twitter.com.",
   "icons" : {
