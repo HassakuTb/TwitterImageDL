@@ -14,7 +14,7 @@ function downloadImage(srcUrl, response){
         chrome.downloads.download({
             url: (srcUrl + ':orig'),
             filename: useDirectory ? (directory + '/' + filename) : filename,
-            saveAs: items.save_as
+            saveAs: items.open_save_as
         });
     });
 }
