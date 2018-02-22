@@ -1,15 +1,20 @@
 function downloadImage(srcUrl, response){
     console.log(response);
-    var directory = 'TwitterImageDL'
-    var split = srcUrl.split('.');
-    var extension = split[split.length - 1].toLowerCase();
-    var filename = response.result
-            ? `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`
-            : `cannot-resolve.${extension}`
-    chrome.downloads.download({
-        url: (srcUrl + ':orig'),
-        filename: directory + '/' + filename,
-        saveAs: false
+    chrome.storage.local.get({
+        download_to: 'TwitterImageDLer',
+        open_save_as: false
+    }, function(items) {
+        var directory = items.download_to;
+        var split = srcUrl.split('.');
+        var extension = split[split.length - 1].toLowerCase();
+        var filename = response.result
+                ? `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`
+                : `cannot-resolve.${extension}`
+        chrome.downloads.download({
+            url: (srcUrl + ':orig'),
+            filename: directory + '/' + filename,
+            saveAs: items.save_as
+        });
     });
 }
 
