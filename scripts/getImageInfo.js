@@ -26,6 +26,9 @@ function getImageInfo(srcUrl, sendResponse){
     if(isAdaptiveImage){
         sendResponse(getInfoFromTimeline(targetImage, srcUrl));
     }
+    else if(targetImage.parent('.Gallery-media').length > 0){
+        sendResponse(getInfoFromGallery(targetImage));
+    }
     else if(targetImage.parent('.QuoteMedia-photoContainer').length > 0){
         sendResponse(getinfoFromNotification(targetImage));
     }
@@ -35,6 +38,24 @@ function getImageInfo(srcUrl, sendResponse){
     else{
         sendResponse({ result : false });
     }
+}
+
+//  download from single gallery
+//  param image : jquery object <img>
+//  returns {username, tweetId, imageIndex}
+function getInfoFromGallery(image){
+    console.log("download from gallery")
+
+    var imageIndex = 0; //  in gallery, always single image
+    var username = image.parent().siblings().find('[data-screen-name]').attr('data-screen-name');
+    var tweetId = image.parent().siblings().find('[data-item-id]').attr('data-item-id');
+
+    return {
+        result : true,
+        username : username,
+        tweetId : tweetId,
+        imageIndex : imageIndex
+    };
 }
 
 //  download from timeline of tweet detail

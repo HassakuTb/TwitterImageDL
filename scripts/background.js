@@ -9,7 +9,6 @@ function downloadImage(srcUrl, response){
         var split = srcUrl.split('.');
         var extension = split[split.length - 1].toLowerCase();
         var extensionSplit = extension.split(':');
-        console.log(`extensionSplit = ${extensionSplit}`);
         if(extensionSplit.length >= 2){
             extension = extensionSplit[0];
             var suffixLength = extensionSplit[1].length + 1;
