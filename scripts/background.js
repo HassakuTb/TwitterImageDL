@@ -8,6 +8,13 @@ function downloadImage(srcUrl, response){
         var directory = items.download_to;
         var split = srcUrl.split('.');
         var extension = split[split.length - 1].toLowerCase();
+        var extensionSplit = extension.split(':');
+        console.log(`extensionSplit = ${extensionSplit}`);
+        if(extensionSplit.length >= 2){
+            extension = extensionSplit[0];
+            var suffixLength = extensionSplit[1].length + 1;
+            srcUrl = srcUrl.slice(0, -suffixLength);
+        }
         var filename = response.result
                 ? `${response.username}-${response.tweetId}-${response.imageIndex}.${extension}`
                 : `cannot-resolve.${extension}`
