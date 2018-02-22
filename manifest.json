@@ -3,7 +3,7 @@
   "name" : "Twitter Image Downloader",
   "short_name" : "Twitter Image DLer",
   "version" : "0.2.0",
-  "description" : "Download and rename original image in twitter.com.",
+  "description" : "Download and rename original image in twitter.com. timeline",
   "icons" : {
     "16" : "icon/icon16.png",
     "48" : "icon/icon48.png",
