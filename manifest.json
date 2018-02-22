@@ -25,13 +25,14 @@
       }
   ],
   "options_ui" : {
-      "page" : "options.html",
+      "page" : "html/options.html",
       "chrome_style" : true
   },
   "permissions" : [
     "tabs",
     "contextMenus",
     "downloads",
+    "storage",
     "*://twitter.com/*"
   ]
 }
