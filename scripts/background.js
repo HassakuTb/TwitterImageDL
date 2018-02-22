@@ -1,9 +1,10 @@
 function downloadImage(srcUrl, response){
     console.log(response);
     chrome.storage.local.get({
-        download_to: 'TwitterImageDLer',
-        open_save_as: false
+        download_to : 'TwitterImageDLer',
+        open_save_as : 'false'
     }, function(items) {
+        var useDirectory = items.download_to.length > 0;
         var directory = items.download_to;
         var split = srcUrl.split('.');
         var extension = split[split.length - 1].toLowerCase();
@@ -12,7 +13,7 @@ function downloadImage(srcUrl, response){
                 : `cannot-resolve.${extension}`
         chrome.downloads.download({
             url: (srcUrl + ':orig'),
-            filename: directory + '/' + filename,
+            filename: useDirectory ? (directory + '/' + filename) : filename,
             saveAs: items.save_as
         });
     });
