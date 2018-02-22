@@ -42,7 +42,7 @@ function restore_options() {
     console.log("restore options");
     chrome.storage.local.get({
         download_to : 'TwitterImageDLer',
-        open_save_as : 'false'
+        open_save_as : false
     }, function(items) {
         document.getElementById('download_to').value = items.download_to;
         document.getElementById('open_save_as').checked = items.open_save_as;

@@ -2,7 +2,7 @@ function downloadImage(srcUrl, response){
     console.log(response);
     chrome.storage.local.get({
         download_to : 'TwitterImageDLer',
-        open_save_as : 'false'
+        open_save_as : false
     }, function(items) {
         var useDirectory = items.download_to.length > 0;
         var directory = items.download_to;
