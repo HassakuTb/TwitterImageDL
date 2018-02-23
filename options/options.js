@@ -33,6 +33,9 @@ function save_options() {
         download_to: download_to,
         open_save_as: open_save_as
     }, function() {
+        var successStatus = document.getElementById('success');
+        line = successStatus.appendChild(document.createElement('span'));
+        line.textContent = 'Options are saved successfully.';
         window.close();
     });
 }
