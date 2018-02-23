@@ -1,6 +1,16 @@
+//  remove status
+function remove_children(node){
+    while (node.firstChild){
+        node.removeChild(node.firstChild);
+    }
+}
+
 //  save
 function save_options() {
     console.log("save options");
+    remove_children(document.getElementById('success'));
+    remove_children(document.getElementById('error'));
+
     var download_to = document.getElementById('download_to').value;
     var open_save_as = document.getElementById('open_save_as').checked;
     download_to = download_to.trim().replace('\\', '/').replace(/[#:,*?"<>|]/g, '_');
@@ -11,6 +21,7 @@ function save_options() {
         for (i = 0, len = split.length; i < len; ++i) {
             var trimmed = split[i].trim();
             if(trimmed.length <= 0){
+                console.log('failed to save.');
                 var status = document.getElementById('error');
                 var line;
                 line = status.appendChild(document.createElement('span'));
@@ -33,8 +44,9 @@ function save_options() {
         download_to: download_to,
         open_save_as: open_save_as
     }, function() {
+        console.log('options are saved.');
         var successStatus = document.getElementById('success');
-        line = successStatus.appendChild(document.createElement('span'));
+        var line = successStatus.appendChild(document.createElement('span'));
         line.textContent = 'Options are saved successfully.';
         window.close();
     });
