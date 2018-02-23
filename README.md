@@ -7,6 +7,7 @@ Download original image and rename to "{username}-{tweet id}-{0~3}"
 
 # Install
 [Chrome Web Store](https://chrome.google.com/webstore/detail/twitter-image-downloader/ljfafhkjifmbnflpbpeoepeponlkodel)
+[Firefox Add-ons](https://addons.mozilla.org/ja/firefox/addon/twitter-image-downloader/)
 
 # Contact
 https://twitter.com/HassakuTb
