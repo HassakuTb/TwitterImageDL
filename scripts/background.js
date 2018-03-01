@@ -34,21 +34,19 @@ function messageToGetTweetInfo(info, tab){
     );
 }
 
-chrome.runtime.onInstalled.addListener(function(){
-    chrome.contextMenus.create({
-        type: 'normal',
-        id: 'downloadTwitterImage',
-        title: 'download original image',
-        contexts: [
-            'image'
-        ],
-        documentUrlPatterns: [
-            '*://twitter.com/*'
-        ],
-        targetUrlPatterns: [
-            '*://pbs.twimg.com/media/*'
-        ]
-    });
+chrome.contextMenus.create({
+    type: 'normal',
+    id: 'downloadTwitterImage',
+    title: 'download original image',
+    contexts: [
+        'image'
+    ],
+    documentUrlPatterns: [
+        '*://twitter.com/*'
+    ],
+    targetUrlPatterns: [
+        '*://pbs.twimg.com/media/*'
+    ]
 });
 
 chrome.contextMenus.onClicked.addListener(messageToGetTweetInfo);
