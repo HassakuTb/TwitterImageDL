@@ -10,4 +10,4 @@ Download original image and rename to "{username}-{tweet id}-{0~3}"
 [Firefox Add-ons](https://addons.mozilla.org/ja/firefox/addon/twitter-image-downloader/)
 
 # Contact
-https://twitter.com/HassakuTb
+https://twitter.com/hassaku_dev
