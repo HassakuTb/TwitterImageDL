@@ -34,7 +34,7 @@ function messageToGetTweetInfo(info, tab){
     );
 }
 
-chrome.runtime.onInstalled.addListener(function(){
+function createContextMenus(){
     chrome.contextMenus.create({
         type: 'normal',
         id: 'downloadTwitterImage',
@@ -49,6 +49,15 @@ chrome.runtime.onInstalled.addListener(function(){
             '*://pbs.twimg.com/media/*'
         ]
     });
-});
+}
+
+var parser = new UAParser();
+if(parser.getResult().browser.name === 'Chrome'){
+    chrome.runtime.onInstalled.addListener(createContextMenus);
+}
+else{
+    createContextMenus();
+}
+
 
 chrome.contextMenus.onClicked.addListener(messageToGetTweetInfo);
