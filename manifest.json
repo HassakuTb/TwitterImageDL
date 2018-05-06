@@ -10,7 +10,10 @@
     "128" : "icon/icon128.png"
   },
   "background" : {
-    "scripts" : ["scripts/background.js"],
+    "scripts" : [
+        "scripts/ua-parser.js",
+        "scripts/background.js"
+    ],
     "persistent" : false
   },
   "content_scripts":[
