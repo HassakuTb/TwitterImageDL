@@ -1,0 +1,22 @@
+{
+  "name": "twitterimagedl",
+  "version": "0.3.0",
+  "description": "This is Chrome Extension.  \r Download and rename original image in twitter.com.  \r Add context menu \"download original image\" when you click right in twitter.com image.  \r Download original image and rename to \"{username}-{tweet id}-{0~3}\"  \r ![gif image](https://raw.github.com/wiki/HassakuTb/TwitterImageDL/images/TwitterImageDL.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HassakuTb/TwitterImageDL.git"
+  },
+  "author": "HassakuTb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HassakuTb/TwitterImageDL/issues"
+  },
+  "homepage": "https://github.com/HassakuTb/TwitterImageDL#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
