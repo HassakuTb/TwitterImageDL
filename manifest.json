@@ -11,7 +11,6 @@
   },
   "background" : {
     "scripts" : [
-        "scripts/ua-parser.js",
         "scripts/background.js"
     ],
     "persistent" : false

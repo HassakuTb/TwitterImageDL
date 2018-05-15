@@ -51,12 +51,11 @@ function createContextMenus(){
     });
 }
 
-var parser = new UAParser();
-if(parser.getResult().browser.name === 'Chrome'){
-    chrome.runtime.onInstalled.addListener(createContextMenus);
+if(chrome.runtime.id === 'twitterImageDL@hassaku.blue'){
+    createContextMenus();
 }
 else{
-    createContextMenus();
+    chrome.runtime.onInstalled.addListener(createContextMenus);
 }
 
 
