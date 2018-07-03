@@ -3,7 +3,7 @@ var mergeJson = require('gulp-merge-json');
 var rimraf = require('rimraf')
 
 gulp.task('clean', function(callback){
-    rimraf('release/firefox', callback)
+    rimraf('release', callback)
 });
 
 gulp.task('releaseForFirefox', ['clean'], function(){
